@@ -1,0 +1,52 @@
+<!DOCTYPE html>
+<html lang="en">
+  <head>
+    <meta charset="UTF-8" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    <meta http-equiv="X-UA-Compatible" content="ie=edge" />
+    <title>ChatApp</title>
+    <script>
+      const roomName = "<%= roomName %>";
+    </script>
+    <style>
+      * {
+        box-sizing: border-box;
+      }
+      #mssz-container {
+        height: 80vh;
+      }
+      #input-container {
+        text-align: center;
+      }
+      #input {
+        height: 30px;
+        width: 50%;
+      }
+      #btn {
+        height: 30px;
+      }
+      .mszz_div_cls_other {
+        padding: 10px;
+        background-color: lightgrey;
+        margin-bottom: 5px;
+      }
+      .mszz_div_cls_you {
+        padding: 10px;
+        background-color: white;
+        margin-bottom: 5px;
+        margin-right: 30px;
+        text-align: right;
+      }
+    </style>
+    <script src="http://localhost:3000/socket.io/socket.io.js"></script>
+  </head>
+  <body>
+    <div id="mssz-container"></div>
+    <form id="input-container">
+      <input type="text" id="input" />
+      <button type="submit" id="btn">Send</button>
+    </form>
+    <script src="home_js.js"></script>
+    <script src="app.js"></script>
+  </body>
+</html>
