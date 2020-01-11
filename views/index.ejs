@@ -4,21 +4,39 @@
     <meta charset="UTF-8" />
     <meta name="viewport" content="width=device-width, initial-scale=1.0" />
     <meta http-equiv="X-UA-Compatible" content="ie=edge" />
-    <title>ChatApp</title>
-    <link rel="stylesheet" href="../style.css" />
+    <title>Index ChatApp</title>
+    <link rel="stylesheet" href="index.css" />
     <script src="http://localhost:3000/socket.io/socket.io.js"></script>
   </head>
   <body>
-    <div id="room_container">
-      <% Object.keys(rooms).forEach(room =>{ %>
-      <div><%= room %></div>
-      <a href="/<%= room %>">Join</a>
-      <% });%>
+    <div class="big_container">
+      <div class="head">
+        <h1>ChatApp</h1>
+        <p><%=name%></p>
+      </div>
+      <div id="room_container"></div>
     </div>
-    <form action="/room" method="POST">
-      <input name="room" type="text" required />
-      <button type="submit">Add Room</button>
-    </form>
+    <div class="small_container">
+      <div class="head">
+        <p>Your Id: <%=id%></p>
+        <a href="/logout" class="logout_a"
+          ><span class="logout">Logout</span></a
+        >
+      </div>
+      <input
+        type="number"
+        id="search"
+        placeholder="Type the id of your friend"
+      /><br />
+      <button id="search-btn">Search</button>
+      <div class="user_container"></div>
+    </div>
+
+    <script>
+      let user_name = "<%= name %>";
+      let id = "<%= id %>";
+      let rooms = <%-JSON.stringify(rooms)%>;
+    </script>
     <script src="app.js"></script>
   </body>
 </html>
