@@ -8,7 +8,7 @@ const dotenv = require("dotenv");
 const Users = require("./database/Users");
 const Rooms = require("./database/Rooms");
 const Msszs_schema = require("./database/Msszs");
-const bcrypt = require("bcrypt");
+const bcrypt = require("bcryptjs");
 const jwt = require("jsonwebtoken");
 const cookieParser = require("cookie-parser");
 let messages = []; //[{ mssz: "Welcome",name: "Biswajit"}]
@@ -274,7 +274,7 @@ app.get("/:room", auth, async (req, res) => {
     console.log(err);
   }
 });
-server.listen(3000, () => {
+server.listen(process.env.PORT || 80, () => {
   console.log("server is running");
 });
 //////////////////////////////////////////////////////
