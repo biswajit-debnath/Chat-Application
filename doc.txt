@@ -1,2 +1,0 @@
-server at    https://server.biswajit-debnath.now.sh
-client at    https://client.biswajit-debnath.now.sh
